@@ -12,18 +12,18 @@ const Header = ({ siteTitle }) => {
   return (
     <header className="md:flex justify-between items-center">
       {/* avatar and hamburger button */}
-      <div className="shadow md:shadow-none flex justify-between p-5 items-center md:inline">
-        <a>
+      <div className="md:shadow-none flex justify-between p-5 items-center md:inline">
+        <Link to="/">
           <img
             src="https://pbs.twimg.com/profile_images/1276969680519852032/K5uoIf4h_400x400.jpg"
             className="h-20 w-20 rounded-full md:inline"
           ></img>
-        </a>
+        </Link>
         {/* buttons */}
 
         {menuClosed && (
           <h1 onClick={() => setMenuClosed(!menuClosed)}>
-            <HiMenu className="md:hidden text-2xl"/>
+            <HiMenu className="md:hidden text-2xl" />
           </h1>
         )}
         {!menuClosed && (
@@ -47,9 +47,14 @@ const Header = ({ siteTitle }) => {
             <Link to="/services">Services</Link>
           </div>
           <div className="md:inline-block hover:text-blue-500 transform md:hover:scale-105 transition duration-300">
-            <Link to="/contact" class="md:border md:py-3 md:px-6 md:rounded-lg md:shadow-lg md:bg-gray-800 md:text-gray-100 md:hover:text-white md:hover:shadow-2xl transform transition scale-150">Let's Talk</Link>
+            <Link
+              to="/contact"
+              class="md:border md:py-3 md:px-6 md:rounded-lg md:shadow-lg md:bg-gray-800 md:text-gray-100 md:hover:text-white md:hover:shadow-2xl transform transition scale-150"
+            >
+              Let's Talk
+            </Link>
           </div>
-          </div>
+        </div>
       </div>
     </header>
   )
