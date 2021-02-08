@@ -135,6 +135,11 @@ const ContactPage = () => {
                 class="block border-2 border-black rounded w-full p-5"
               ></textarea>
             </div>
+            <div>
+              <button className="bg-black py-2 px-6 font-extrabold text-gray-100 rounded shadow uppercase mt-6">
+                Send
+              </button>
+            </div>
           </form>
         </div>
       </div>
