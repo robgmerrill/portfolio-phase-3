@@ -2,59 +2,53 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PageHeader from "../components/pageHeader"
+import { graphql, Link } from "gatsby"
 
-const WorkPage = ({ props }) => {
+const WorkPage = ({ data }) => {
+  console.log("work", data.work.nodes)
+  const work = data.work.nodes
   return (
     <Layout>
       <SEO title="work" />
       <PageHeader title={"Work"} />
       {/* work samples */}
-      <div className="space-y-6 px-5 md:grid grid-cols-6 gap-5">
-        <div className="col-span-4 pt-6">
-          <img
-            className="rounded shadow-lg w-full h-96  object-cover"
-            src="https://images.unsplash.com/photo-1492138786289-d35ea832da43?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8aG9tZSUyMG9mZmljZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60"
-          />
-        </div>
-        <div className="col-span-2">
-          <img
-            className="rounded shadow-lg w-full h-96 object-cover"
-            src="https://images.unsplash.com/photo-1492138786289-d35ea832da43?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8aG9tZSUyMG9mZmljZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60"
-          />
-        </div>
-        <div className="col-span-2">
-          <img
-            className="rounded shadow-lg w-full h-96 object-cover"
-            src="https://images.unsplash.com/photo-1492138786289-d35ea832da43?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8aG9tZSUyMG9mZmljZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60"
-          />
-        </div>
-        <div className="col-span-2">
-          <img
-            className="rounded shadow-lg w-full h-96 object-cover"
-            src="https://images.unsplash.com/photo-1492138786289-d35ea832da43?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8aG9tZSUyMG9mZmljZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60"
-          />
-        </div>
-        <div className="col-span-2">
-          <img
-            className="rounded shadow-lg w-full h-96 object-cover"
-            src="https://images.unsplash.com/photo-1492138786289-d35ea832da43?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8aG9tZSUyMG9mZmljZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60"
-          />
-        </div>
-        <div className="col-span-2">
-          <img
-            className="rounded shadow-lg w-full h-96 object-cover"
-            src="https://images.unsplash.com/photo-1492138786289-d35ea832da43?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8aG9tZSUyMG9mZmljZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60"
-          />
-        </div>
-        <div className="col-span-4">
-          <img
-            className="rounded shadow-lg w-full h-96 object-cover"
-            src="https://images.unsplash.com/photo-1492138786289-d35ea832da43?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8aG9tZSUyMG9mZmljZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=60"
-          />
-        </div>
+      <div className="grid-cols-6 gap-5 px-5 space-y-6 md:container md:mx-auto md:space-y-0 md:grid">
+        {work.map(workProject => {
+          return (
+            <Link to={`/work/${workProject.slug.current}`} class="col-span-2 ">
+              <div className="transform first:pt-10">
+                <img
+                  className="object-cover w-full rounded shadow-lg h-96"
+                  src={workProject.image.asset.fluid.src}
+                />
+              </div>
+            </Link>
+          )
+        })}
       </div>
     </Layout>
   )
 }
+
+export const query = graphql`
+  query WorkPageQuery {
+    work: allSanityWork {
+      nodes {
+        workTitle
+        workSummary
+        image {
+          asset {
+            fluid {
+              src
+            }
+          }
+        }
+        slug {
+          current
+        }
+      }
+    }
+  }
+`
 
 export default WorkPage
