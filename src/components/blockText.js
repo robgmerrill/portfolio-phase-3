@@ -14,8 +14,24 @@ const serializers = {
   },
 }
 
+// const serializers = {
+//   types: {
+//     code: props => (
+//       <pre data-language={props.node.language}>
+//         <code>{props.node.code}</code>
+//       </pre>
+//     ),
+//   },
+// }
+
 const BlockText = ({ blocks }) => (
-  <BaseBlockContent blocks={blocks} serializers={serializers} />
+  <BaseBlockContent
+    blocks={blocks}
+    imageOptions={{ w: 800, h: 500, fit: "max" }}
+    projectId="qruoo0r7"
+    dataset="production"
+    serializers={serializers}
+  />
 )
 
 export default BlockText
