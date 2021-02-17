@@ -8,7 +8,7 @@ const ContactPage = () => {
     <Layout>
       <SEO title="Contact" />
       <PageHeader title="Let's Talk!" />
-      <div className="container mx-auto p-5">
+      <div className="container p-5 mx-auto">
         <div>
           <p className="leading-loose">
             Please fill out the form below if you’re interested in working
@@ -20,23 +20,24 @@ const ContactPage = () => {
         </div>
         <div>
           <form
-            action="#"
+            action="https://formspree.io/f/meqpwkyl"
             method="POST"
-            className="mt-12 space-y-6 md:space-y-0 md:grid grid-cols-6 md:w-2/3 gap-8"
+            className="grid-cols-6 gap-8 mt-12 space-y-6 md:space-y-0 md:grid md:w-2/3"
           >
             {/* email */}
             <div className="col-span-3">
-              <label className="text-gray-400 mb-3 block" for="email">
+              <label className="block mb-3 text-gray-400" for="email">
                 Your Email (required)
               </label>
               <input
                 id="email"
+                required
                 type="text"
-                className="block border-2 border-gray-800 w-full rounded shadow-lg p-2 focus:outline-none"
+                className="block w-full p-2 border-2 border-gray-800 rounded shadow-lg focus:outline-none"
               />
             </div>
             <div className="col-span-3">
-              <label className="text-gray-400 mb-3 block" for="subject">
+              <label className="block mb-3 text-gray-400" for="subject">
                 What do you want to talk about?
               </label>
               <select
@@ -106,21 +107,21 @@ const ContactPage = () => {
               </div>
               <div class="flex items-center mt-4">
                 <input
-                  id="design"
-                  name="design"
+                  id="development"
+                  name="development"
                   type="checkbox"
                   class="h-4 w-4 mr-4 border-4 border-yellow-800 shadow rounded-full focus:ring-indigo-500 text-indigo-600"
                 />
-                <label for="design">Development</label>
+                <label for="development">Development</label>
               </div>
               <div class="flex items-center mt-4">
                 <input
-                  id="design"
-                  name="design"
+                  id="strategy"
+                  name="strategy"
                   type="checkbox"
                   class="h-4 w-4 mr-4 border-4 border-yellow-800 shadow rounded-full focus:ring-indigo-500 text-indigo-600"
                 />
-                <label for="design">Strategy</label>
+                <label for="strategy">Strategy</label>
               </div>
             </div>
             <div class="mt-6 col-span-6">
@@ -136,7 +137,10 @@ const ContactPage = () => {
               ></textarea>
             </div>
             <div>
-              <button className="bg-black py-2 px-6 font-extrabold text-gray-100 rounded shadow uppercase mt-6">
+              <button
+                type="submit"
+                className="px-6 py-2 mt-6 font-extrabold text-gray-100 uppercase bg-black rounded shadow"
+              >
                 Send
               </button>
             </div>

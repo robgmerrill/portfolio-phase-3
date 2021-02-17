@@ -1,5 +1,6 @@
 import BaseBlockContent from "@sanity/block-content-to-react"
 import React from "react"
+import styled from "styled-components"
 
 // import typography from './typography.module.css'
 
@@ -24,14 +25,23 @@ const serializers = {
 //   },
 // }
 
+const BlockTextContainer = styled.div`
+  img {
+    width: 100%;
+    padding: 20px;
+  }
+`
+
 const BlockText = ({ blocks }) => (
-  <BaseBlockContent
-    blocks={blocks}
-    imageOptions={{ w: 800, h: 500, fit: "max" }}
-    projectId="qruoo0r7"
-    dataset="production"
-    serializers={serializers}
-  />
+  <BlockTextContainer>
+    <BaseBlockContent
+      blocks={blocks}
+      imageOptions={{ w: 800, h: 500, fit: "max" }}
+      projectId="qruoo0r7"
+      dataset="production"
+      serializers={serializers}
+    />
+  </BlockTextContainer>
 )
 
 export default BlockText

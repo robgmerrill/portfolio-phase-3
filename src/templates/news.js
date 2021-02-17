@@ -2,6 +2,7 @@ import { graphql } from "gatsby"
 import React from "react"
 import BlockText from "../components/blockText"
 import Layout from "../components/layout"
+import styled from "styled-components"
 
 export const query = graphql`
   query NewsPostTemplateQuery($id: String!) {
@@ -25,6 +26,10 @@ export const query = graphql`
   }
 `
 
+// const BlockTextContainer = styled.div`
+//   img
+// `
+
 const NewsTemplate = ({ data }) => {
   console.log("data from this pages news template", data)
   const news = data.news
@@ -46,7 +51,7 @@ const NewsTemplate = ({ data }) => {
             className="object-cover w-full col-span-2 h-80"
           />
         </div>
-        <p className="p-5 text-gray-400">
+        <p className="p-5 text-gray-600">
           <BlockText blocks={news._rawBody} />
         </p>
       </div>
