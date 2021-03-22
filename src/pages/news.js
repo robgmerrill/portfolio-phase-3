@@ -36,7 +36,7 @@ const NewsPage = ({ data }) => {
   return (
     <Layout>
       <PageHeader title="News" />
-      <div className="container grid grid-cols-3 gap-8 mx-auto md:h-108 ">
+      <div className="container gap-8 px-5 mx-auto lg:grid-cols-3 md:grid-cols-2 md:grid md:h-108">
         {data.news.edges.map(newsItem => {
           return (
             <Link to={`/news/${newsItem.node.slug.current}`}>

@@ -15,7 +15,10 @@ const WorkPage = ({ data }) => {
       <div className="grid-cols-6 gap-5 px-5 space-y-6 md:container md:mx-auto md:space-y-0 md:grid">
         {work.map(workProject => {
           return (
-            <Link to={`/work/${workProject.slug.current}`} class="col-span-2 ">
+            <Link
+              to={`/work/${workProject.slug.current}`}
+              class="lg:col-span-2 md:col-span-3"
+            >
               <div className="transform first:pt-10">
                 <img
                   className="object-cover w-full rounded shadow-lg h-96"
