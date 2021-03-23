@@ -25,8 +25,8 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <div className="">
-        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <div className="container flex flex-col justify-between h-screen mx-auto ">
+        <Header />
 
         <main>{children}</main>
         <Footer />

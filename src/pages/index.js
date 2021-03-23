@@ -11,7 +11,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="Home" />
-      <div className="container p-5 mx-auto my-28">
+      <div className="container p-5 mx-auto">
         <h1 className="text-4xl font-bold leading-normal md:text-center">
           {title}
         </h1>

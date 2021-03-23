@@ -45,7 +45,7 @@ const Header = ({ siteTitle }) => {
       {/* menu items */}
       <div
         className={
-          " h-screen font-bold md:h-full space-x-8 md:inline flex flex-col h-full justify-center items-center text-4xl md:text-lg" +
+          " h-screen font-bold md:h-full space-x-8  md:flex flex-col h-full justify-center items-center text-4xl md:text-lg" +
           (menuClosed ? " hidden" : " block")
         }
       >

@@ -28,7 +28,18 @@ const ServicesPage = () => {
         </div>
         <div className="md:flex md:justify-between">
           <div className="mt-10 md:w-1/3">
-            <div className="font-bold text-lg">Design</div>
+            <div className="text-lg font-bold">Design</div>
+            <ul className="p-5">
+              <li className="pt-4">SEO </li>
+              <li className="pt-4">AdWords</li>
+              <li className="pt-4">Facebook Group Strategy</li>
+              <li className="pt-4">Google Map submission</li>
+              <li className="pt-4">Things</li>
+              <li className="pt-4">Things</li>
+            </ul>
+          </div>
+          <div className="mt-10 md:w-1/3">
+            <div className="text-lg font-bold">Design</div>
             <ul className="p-5">
               <li className="pt-4">Things</li>
               <li className="pt-4">Things</li>
@@ -39,18 +50,7 @@ const ServicesPage = () => {
             </ul>
           </div>
           <div className="mt-10 md:w-1/3">
-            <div className="font-bold text-lg">Design</div>
-            <ul className="p-5">
-              <li className="pt-4">Things</li>
-              <li className="pt-4">Things</li>
-              <li className="pt-4">Things</li>
-              <li className="pt-4">Things</li>
-              <li className="pt-4">Things</li>
-              <li className="pt-4">Things</li>
-            </ul>
-          </div>
-          <div className="mt-10 md:w-1/3">
-            <div className="font-bold text-lg">Design</div>
+            <div className="text-lg font-bold">Design</div>
             <ul className="p-5">
               <li className="pt-4">Thingssd sdf sdf sdf sdf </li>
               <li className="pt-4">Things</li>
