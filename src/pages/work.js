@@ -25,7 +25,9 @@ const WorkPage = ({ data }) => {
                   src={workProject.image.asset.fluid.src}
                 />
                 <div className="absolute bottom-0 mb-4">
-                  <h3 className="mb-4">{workProject.workTitle}</h3>
+                  <h3 className="mb-4 font-semibold">
+                    {workProject.workTitle}
+                  </h3>
                   <p>{workProject.workSummary}</p>
                 </div>
               </div>
