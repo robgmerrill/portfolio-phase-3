@@ -12,7 +12,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SEO title="Home" />
       <div className="container p-5 mx-auto">
-        <h1 className="text-4xl font-bold leading-normal md:text-center">
+        <h1 className="p-5 text-2xl font-bold leading-normal md:p-0 md:text-4xl md:text-center">
           {title}
         </h1>
       </div>
