@@ -8,17 +8,21 @@ import { useState } from "react"
 const Header = ({ siteTitle }) => {
   const data = useStaticQuery(graphql`
     query ImageQuery {
-      allSanityImageAsset {
+      allSanityHomePage {
         nodes {
-          fixed {
-            src
+          avatar {
+            asset {
+              fluid {
+                src
+              }
+            }
           }
         }
       }
     }
   `)
-  console.log(data.allSanityImageAsset.nodes[0].fixed.src)
-  const image = data.allSanityImageAsset.nodes[0].fixed.src
+  // console.log(data.allSanityImageAsset.nodes[0].fixed.src)
+  const image = data.allSanityHomePage.nodes[0].avatar.asset.fluid.src
   // boolean to track if menu is open or closed
   const [menuClosed, setMenuClosed] = React.useState(true)
   console.log(menuClosed)
@@ -27,7 +31,10 @@ const Header = ({ siteTitle }) => {
       {/* avatar and hamburger button */}
       <div className="flex items-center justify-between p-5 md:shadow-none md:inline">
         <Link to="/">
-          <img src={image} className="w-20 h-20 rounded-full md:inline"></img>
+          <img
+            src={image}
+            className="object-cover w-20 h-20 rounded-full md:inline"
+          ></img>
         </Link>
         {/* buttons */}
 

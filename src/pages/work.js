@@ -19,11 +19,15 @@ const WorkPage = ({ data }) => {
               to={`/work/${workProject.slug.current}`}
               class="lg:col-span-2 md:col-span-3"
             >
-              <div className="transform first:pt-10">
+              <div className="relative p-5 transform shadow-lg first:pt-10 h-96">
                 <img
-                  className="object-cover w-full rounded shadow-lg h-96"
+                  className="object-cover w-full rounded"
                   src={workProject.image.asset.fluid.src}
                 />
+                <div className="absolute bottom-0 mb-4">
+                  <h3 className="mb-4">{workProject.workTitle}</h3>
+                  <p>{workProject.workSummary}</p>
+                </div>
               </div>
             </Link>
           )
