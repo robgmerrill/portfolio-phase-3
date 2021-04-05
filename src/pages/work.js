@@ -15,7 +15,7 @@ const WorkPage = ({ data }) => {
       <div className="grid-cols-6 gap-5 px-5 space-y-6 md:container md:mx-auto md:space-y-0 md:grid">
         {work.map(workProject => {
           return (
-            <Link
+            <div
               to={`/work/${workProject.slug.current}`}
               class="lg:col-span-3 md:col-span-3 h-auto"
             >
@@ -32,16 +32,20 @@ const WorkPage = ({ data }) => {
                   </h3>
                   <p>{workProject.workSummary}</p>
                   <div className="flex pr-5 mt-4 space-x-4">
-                    <div className="w-1/2 py-2 text-center text-white bg-black rounded">
+                    <a
+                      className="w-1/2 py-2 text-center text-white bg-black rounded"
+                      href={`${workProject.websitePreview._rawAsset._ref}?dl=`}
+                      download
+                    >
                       Desktop Preview
-                    </div>
+                    </a>
                     <div className="w-1/2 py-2 text-center text-white bg-black rounded">
                       Mobile Preview
                     </div>
                   </div>
                 </div>
               </div>
-            </Link>
+            </div>
           )
         })}
       </div>
@@ -55,6 +59,12 @@ export const query = graphql`
       nodes {
         workTitle
         workSummary
+        mobilePreview {
+          _rawAsset
+        }
+        websitePreview {
+          _rawAsset
+        }
         image {
           asset {
             fluid {
