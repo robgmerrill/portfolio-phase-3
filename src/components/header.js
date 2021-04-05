@@ -33,7 +33,7 @@ const Header = ({ siteTitle }) => {
         <Link to="/">
           <img
             src={image}
-            className="object-cover w-20 h-20 rounded-full md:inline"
+            className="object-cover w-12 h-12 rounded-full md:w-20 md:h-20 md:inline"
           ></img>
         </Link>
         {/* buttons */}
