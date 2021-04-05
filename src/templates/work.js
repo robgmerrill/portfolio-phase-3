@@ -30,16 +30,28 @@ const WorkTemplate = props => {
   console.log("This is the data I am LOOKING FOR", data)
   return (
     <Layout>
-      <div className="container mx-auto">
+      <div className="container flex mx-auto">
         <div>
           <h1>{data.work.workTitle}</h1>
           <h2>{data.work.workSummary}</h2>
         </div>
         <div>
-          <img
-            className="w-full px-5 shadow-xl"
-            src={data.work.image.asset.fluid.src}
-          />
+          <div className="">
+            <a href="/images/myw3schoolsimage.jpg" download>
+              <div>Desktop Preview</div>
+              <img
+                className="w-full px-5 shadow-xl"
+                src={data.work.image.asset.fluid.src}
+              />
+            </a>
+          </div>
+          <div className="">
+            <div>Mobile Preview</div>
+            <img
+              className="w-full px-5 shadow-xl"
+              src={data.work.image.asset.fluid.src}
+            />
+          </div>
         </div>
       </div>
     </Layout>

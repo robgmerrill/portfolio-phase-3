@@ -17,18 +17,28 @@ const WorkPage = ({ data }) => {
           return (
             <Link
               to={`/work/${workProject.slug.current}`}
-              class="lg:col-span-2 md:col-span-3"
+              class="lg:col-span-3 md:col-span-3 h-auto"
             >
-              <div className="relative p-5 transform shadow-lg first:pt-10 h-96">
-                <img
-                  className="object-cover w-full rounded"
-                  src={workProject.image.asset.fluid.src}
-                />
-                <div className="absolute bottom-0 mb-4">
-                  <h3 className="mb-4 font-semibold">
+              <div className="relative h-auto p-5 transform shadow-lg rounded-xl first:pt-10">
+                <div className="h-96">
+                  <img
+                    className="object-cover w-full border-8"
+                    src={workProject.image.asset.fluid.src}
+                  />
+                </div>
+                <div className="bottom-0 h-24 mt-4 mb-20">
+                  <h3 className="mb-2 font-semibold">
                     {workProject.workTitle}
                   </h3>
                   <p>{workProject.workSummary}</p>
+                  <div className="flex pr-5 mt-4 space-x-4">
+                    <div className="w-1/2 py-2 text-center text-white bg-black rounded">
+                      Desktop Preview
+                    </div>
+                    <div className="w-1/2 py-2 text-center text-white bg-black rounded">
+                      Mobile Preview
+                    </div>
+                  </div>
                 </div>
               </div>
             </Link>
