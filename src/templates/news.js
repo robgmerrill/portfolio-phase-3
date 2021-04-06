@@ -5,6 +5,12 @@ import BlockContent from "@sanity/block-content-to-react"
 import Layout from "../components/layout"
 import styled from "styled-components"
 
+// const client = require("@sanity/client")({
+//   projectId: "qruoo0r7",
+//   dataset: "production",
+//   useCdn: true,
+// })
+
 const serializers = {
   types: {
     code: props => (
