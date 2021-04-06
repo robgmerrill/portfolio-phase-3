@@ -19,14 +19,14 @@ const WorkPage = ({ data }) => {
               to={`/work/${workProject.slug.current}`}
               class="lg:col-span-3 md:col-span-3 h-auto"
             >
-              <div className="relative h-auto p-5 transform shadow-lg rounded-xl first:pt-10">
+              <div className="relative flex flex-col justify-around h-auto p-5 transform shadow-lg rounded-xl first:pt-10">
                 <div className="h-auto">
                   <img
                     className="object-cover w-full"
                     src={workProject.image.asset.fluid.src}
                   />
                 </div>
-                <div className="bottom-0 h-24 mt-4 mb-10">
+                <div className="bottom-0 flex flex-col justify-between mt-4 mb-10 h-36">
                   <h3 className="mb-2 font-semibold">
                     {workProject.workTitle}
                   </h3>
