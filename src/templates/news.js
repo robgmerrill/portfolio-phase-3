@@ -5,6 +5,16 @@ import BlockContent from "@sanity/block-content-to-react"
 import Layout from "../components/layout"
 import styled from "styled-components"
 
+const serializers = {
+  types: {
+    code: props => (
+      <pre data-language={props.node.language}>
+        <code>{props.node.code}</code>
+      </pre>
+    ),
+  },
+}
+
 export const query = graphql`
   query NewsPostTemplateQuery($id: String!) {
     news: sanityNews(id: { eq: $id }) {
@@ -42,7 +52,10 @@ const NewsTemplate = ({ data }) => {
             <div>
               <h1 className="mb-10 text-4xl text-gray-800">{news.title}</h1>
               <h2 className="text-xl text-gray-600">
-                <BlockContent blocks={news._rawExcerpt} />
+                <BlockContent
+                  blocks={news._rawExcerpt}
+                  serializers={serializers}
+                />
               </h2>
             </div>
           </div>
@@ -53,7 +66,7 @@ const NewsTemplate = ({ data }) => {
           />
         </div>
         <p className="p-5 text-gray-600">
-          <BlockContent blocks={news._rawBody} />
+          <BlockContent blocks={news._rawBody} serializers={serializers} />
         </p>
       </div>
     </Layout>
