@@ -34,13 +34,20 @@ const WorkPage = ({ data }) => {
                   <div className="flex pr-5 mt-4 space-x-4">
                     <a
                       className="w-1/2 py-2 text-center text-white bg-black rounded"
+                      href={workProject.websitePreview.asset.fluid.src}
                       download
+                      target="_blank"
                     >
                       Desktop Preview
                     </a>
-                    <div className="w-1/2 py-2 text-center text-white bg-black rounded">
+                    <a
+                      href={workProject.mobilePreview.asset.fluid.src}
+                      download
+                      target="_blank"
+                      className="w-1/2 py-2 text-center text-white bg-black rounded"
+                    >
                       Mobile Preview
-                    </div>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -58,12 +65,20 @@ export const query = graphql`
       nodes {
         workTitle
         workSummary
-        # mobilePreview {
-        #   _rawAsset
-        # }
-        # websitePreview {
-        #   _rawAsset
-        # }
+        websitePreview {
+          asset {
+            fluid {
+              src
+            }
+          }
+        }
+        mobilePreview {
+          asset {
+            fluid {
+              src
+            }
+          }
+        }
         image {
           asset {
             fluid {
