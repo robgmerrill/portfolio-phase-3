@@ -1,13 +1,15 @@
 import React from "react"
 import Layout from "../components/layout"
-import BlockText from "../components/blockText"
+// import BlockText from "../components/blockText"
+import BlockContent from "@sanity/block-content-to-react"
+
 import PageHeader from "../components/pageHeader"
 import { Link } from "gatsby"
 
 // graphql query
 export const query = graphql`
   query NewsPageQuery {
-    news: allSanityNews(limit: 3, sort: { fields: publishedAt, order: DESC }) {
+    news: allSanityNews(limit: 4, sort: { fields: publishedAt, order: DESC }) {
       edges {
         node {
           _rawBody
@@ -51,7 +53,7 @@ const NewsPage = ({ data }) => {
                     {newsItem.node.title}
                   </h1>
                   <h2 className="mb-12 text-xl text-gray-600">
-                    <BlockText blocks={newsItem.node._rawExcerpt} />
+                    <BlockContent blocks={newsItem.node._rawExcerpt} />
                   </h2>
                 </div>
               </div>

@@ -1,6 +1,7 @@
 import { graphql } from "gatsby"
 import React from "react"
-import BlockText from "../components/blockText"
+import BlockContent from "@sanity/block-content-to-react"
+
 import Layout from "../components/layout"
 import styled from "styled-components"
 
@@ -41,7 +42,7 @@ const NewsTemplate = ({ data }) => {
             <div>
               <h1 className="mb-10 text-4xl text-gray-800">{news.title}</h1>
               <h2 className="text-xl text-gray-600">
-                <BlockText blocks={news._rawExcerpt} />
+                <BlockContent blocks={news._rawExcerpt} />
               </h2>
             </div>
           </div>
@@ -52,7 +53,7 @@ const NewsTemplate = ({ data }) => {
           />
         </div>
         <p className="p-5 text-gray-600">
-          <BlockText blocks={news._rawBody} />
+          <BlockContent blocks={news._rawBody} />
         </p>
       </div>
     </Layout>

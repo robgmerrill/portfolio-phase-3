@@ -34,7 +34,6 @@ const WorkPage = ({ data }) => {
                   <div className="flex pr-5 mt-4 space-x-4">
                     <a
                       className="w-1/2 py-2 text-center text-white bg-black rounded"
-                      href={`${workProject.websitePreview._rawAsset._ref}?dl=`}
                       download
                     >
                       Desktop Preview
@@ -59,12 +58,12 @@ export const query = graphql`
       nodes {
         workTitle
         workSummary
-        mobilePreview {
-          _rawAsset
-        }
-        websitePreview {
-          _rawAsset
-        }
+        # mobilePreview {
+        #   _rawAsset
+        # }
+        # websitePreview {
+        #   _rawAsset
+        # }
         image {
           asset {
             fluid {
