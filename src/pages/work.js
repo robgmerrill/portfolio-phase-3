@@ -26,7 +26,7 @@ const WorkPage = ({ data }) => {
                     src={workProject.image.asset.fluid.src}
                   />
                 </div>
-                <div className="bottom-0 flex flex-col justify-between mt-4 md:mb-10 min-h-36">
+                <div className="bottom-0 flex flex-col justify-between mt-4 md:mb-10 min-h-36 md:h-36">
                   <h3 className="mb-2 font-semibold">
                     {workProject.workTitle}
                   </h3>
